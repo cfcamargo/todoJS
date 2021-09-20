@@ -22,7 +22,14 @@
       <ul class="todos">
         <span class="todos-title">Todos</span>
 
-       
+        <li :class="['todo', { done: todo.done }]" v-for="todo in todos">
+          <label class="checkbox-input">
+            <input type="checkbox" :checked="todo.done" />
+            <span class="checkmark"></span>
+          </label>
+          <span class="todo-text">{{ todo.text }}</span>
+          <a class="todo-delete"></a>
+        </li>
       </ul>
     </div>
     <script src="./bundle.js"></script>

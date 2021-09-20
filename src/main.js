@@ -8,14 +8,17 @@ const app = createApp ({
 
     data() {
         return {
-            todo: '',
+            todos: [],
         }
     },
     created() {
-        
+        this.fetchTodos()
     },
     methods: {
-
+        async fetchTodos() {
+            this.todos = await apitodos.index()
+            
+        }
     }
 
 })
