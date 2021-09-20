@@ -7,12 +7,12 @@
   </head>
   <body>
     <div id="app">
-      <form>
-        <input type="text" placeholder="Todo" />
+      <form @submit.prevent="createTodo()">
+        <input type="text" placeholder="Todo" v-model="form.text"/>
 
         <label class="checkbox-input">
-          Não concluída
-          <input type="checkbox" checked="true" />
+          {{ form.done ? 'Concluido' : 'Não concluido' }}
+          <input type="checkbox" v-model="form.done" :checked="form.done" />
           <span class="checkmark"></span>
         </label>
 
