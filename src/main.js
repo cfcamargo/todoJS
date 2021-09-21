@@ -41,7 +41,7 @@ const app = createApp ({
             this.todos[index] = data
         },
 
-        async destroy(id){
+        async destroyTodo(id){
             await apiTodos.destroy({id}) 
 
             const index = this.todos.findIndex((todo)=> todo.id === id)
